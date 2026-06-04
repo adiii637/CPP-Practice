@@ -12,3 +12,5 @@ for(int i=2;i<=n;i++)
     for(int j=i*i;j<=n;j+=i)
 
 Marks all non-prime numbers up to n.
+
+Now GCD
