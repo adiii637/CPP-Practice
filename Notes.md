@@ -14,3 +14,4 @@ for(int i=2;i<=n;i++)
 Marks all non-prime numbers up to n.
 
 Now GCD
+lcm,hcf
