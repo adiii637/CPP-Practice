@@ -1,11 +1,12 @@
 #include <bits/stdc++.h>
+using ll = long long;
+#define endl '\n'
 using namespace std;
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    // code here
 
     return 0;
 }
