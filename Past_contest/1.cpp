@@ -6,16 +6,16 @@ using ll = long long;
 void solve(){
     
     ll n;
-    vector<ll> A(n);
     cin>>n;
-    for(ll i;i<n;i++){
+    vector<ll>A;
+    for(ll i=0;i<n;i++){
         cin>>A[i];
     }
     sort(A.begin(),A.end());
     int mid_P=A[n/2];
     ll left=0;
     ll right=0;
-    for(ll i;i<n;i++){
+    for(ll i=0;i<n;i++){
         if(A[i]<mid_P) left++;
         else right++;
     }
