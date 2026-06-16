@@ -2,41 +2,65 @@
 using namespace std;
 
 using ll = long long;
-
-map<pair<ll,ll>, ll> dp;
-ll x;
-
-ll solve(ll a, ll b) {
-    if (a == b) return 0;
-
-    if (a < b) swap(a, b);
-
-    pair<ll,ll> state = {a, b};
-
-    if (dp.count(state)) return dp[state];
-
-    ll ans = a - b; // increment smaller until equal
-
-    ans = min(ans, 1 + solve(a / x, b)); // divide larger
-
-    return dp[state] = ans;
-}
+#define endl '\n'
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-
-    while (t--) {
-        ll a, b;
-        cin >> a >> b >> x;
-
-        dp.clear();
-
-        cout << solve(a, b) << '\n';
+    ll t;
+    cin>>t;
+    while(t--){
+        ll division_used=0;
+        ll a,b,x;
+        cin>>a>>b>>x;
+         if(x==1){
+            cout<<abs(a-b)<<endl;
+            continue;
+        }
+        if(a>b)swap(a,b);
+        ll curr=b;
+        ll ans = LLONG_MAX;
+        while(curr>0){
+            ans=min(ans,division_used+abs(curr-a));
+            curr=curr/x;
+            division_used++;
+        }
+        cout<<ans<<endl;
     }
 
     return 0;
+}
+
+
+// For every level:
+
+// cost_so_far = number of divisions used
+
+// Current value:
+
+// cur = b
+
+// If we stop here:
+
+// answer =
+// cost_so_far + |cur-a|
+
+// Take minimum over all levels.
+
+
+long long solve(long long a, long long b, long long x) {
+
+    if (a > b)
+        swap(a, b);
+
+    if (a == b)
+        return 0;
+
+    if (x == 1)
+        return b - a;
+
+    return min(
+        b - a,
+        1 + solve(a, b / x, x)
+    );
 }
