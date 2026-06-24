@@ -13,3 +13,22 @@ for(int i=2;i<=n;i++)
 
 Marks all non-prime numbers up to n.
 
+One thing I like
+
+You fixed the biggest CP beginner mistake:
+
+ceil(a/b)
+
+on integers.
+
+Using:
+
+(a+b-1)/b
+
+is the correct competitive-programming way.
+
+Left side total = sum(1 ... L-1)
+
+Right side total = sum(R+1 ... N)
+
+Answer = max(left,right)
