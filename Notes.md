@@ -31,4 +31,5 @@ Left side total = sum(1 ... L-1)
 
 Right side total = sum(R+1 ... N)
 
-Answer = max(left,right)
+Answer = max(left,right) mb
+add this
